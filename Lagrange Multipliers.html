@@ -1,107 +1,119 @@
-	<DOCTYPE! html>
-	<html lang = "en">
-	<head>
-		<meta charset = "utf-8">
-		<meta name=viewport content="width=device-width, initial-scale=1">
-		<title>Lagrange Multipliers</title>
-		<link rel = "stylesheet" href = "docs.css">
-		<link href='https://fonts.googleapis.com/css?family=Neuton' rel='stylesheet' type='text/css'>
-		<link href='https://fonts.googleapis.com/css?family=Gentium+Basic' rel='stylesheet' type='text/css'>
-		<script type="text/javascript" async
+<DOCTYPE! html>
+<html lang = "en">
+<head>
+	<meta charset = "utf-8">
+	<meta name=viewport content="width=device-width, initial-scale=1">
+	<title>Lagrange Multipliers</title>
+	<link rel = "stylesheet" href = "docs.css">
+	<link href='https://fonts.googleapis.com/css?family=Neuton' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Gentium+Basic' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" async
 	  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
 	</script>
-	</head>
+</head>
 
-	<body>
-		<h1>Lagrange Multipliers</h1>
-			<p>
-				The Lagrange method is a tool used to find the coordinates of the maximums or minimums of a multivariable function subject to constraints. It looks for the critical points (or stationary points) of a function but <strong>does not tell you if they are maxima or minima</strong>. The extremums could only be determined by testing the coordinates found.  
-			</p>
+<body>
+	<h1>Lagrange Multipliers</h1>
+		<p>
+			The Lagrange method is a tool used to find the coordinates of the maximums or minimums of a multivariable
+			function subject to constraints. It looks for the critical points (or stationary points) of a function but <strong>does
+			not tell you if they are maxima or minima</strong>. The extremums could only be determined by testing the coordinates
+			found.  
+		</p>
 
-		<h2>Lagrange Multipliers with One Constraint</h2>
-			<p class = "notes">
-				<strong>Note:</strong> The Lagrange method applies to any \(nth\)-dimensional function, but for simplicity I'll just illustrate the method with three variables. See the footnotes for more detail <strong>[1]</strong>.
-			</p>
+	<h2>Lagrange Multipliers with One Constraint</h2>
+		<p class = "notes">
+			<strong>Note:</strong> The Lagrange method applies to any \(nth\)-dimensional function, but for simplicity
+			I'll just illustrate the method with three variables. See the footnotes for more detail <strong>[1]</strong>.
+		</p>
 
-			<p>
-				Given a function \(f(x,y,z)\) subject to a constraint \(g(x,y,z) = k\) where \(k\) is some constant, the stationary points satisfy 
+		<p>
+			Given a function \(f(x,y,z)\) subject to a constraint \(g(x,y,z) = k\) where \(k\) is some constant, the stationary points
+			satisfy 
+			
+			$$\nabla f(x,y,z) = \lambda \nabla g(x,y,z)$$
 
-				$$\nabla f(x,y,z) = \lambda \nabla g(x,y,z)$$
+			where \(\lambda\) is some constant known as the <strong>Lagrange multiplier</strong> and \(\nabla f(x,y,z)\) and \(\nabla
+			g(x,y,z)\) are the gradients of \(f\) and \(g\) respectively. 
+		</p>
 
-				where \(\lambda\) is some constant known as the <strong>Lagrange multiplier</strong> and \(\nabla f(x,y,z)\) and \(\nabla g(x,y,z)\) are the gradients of \(f\) and \(g\) respectively. 
-			</p>
+		<p>
+			The constraint is an equation showing the relation between \(x,y\) and \(z\) in \(f\), in other words, the variables are
+			not independent of each other. Graphically, we could visualize the relationship between \(f\) and \(g\) as their point(s)
+			of intersection.
+		</p>
 
-			<p>
-				The constraint is an equation showing the relation between \(x,y\) and \(z\) in \(f\), in other words, the variables are not independent of each other. Graphically, we could visualize the relationship between \(f\) and \(g\) as their point(s) of intersection.
-			</p>
+		<p>
+			Writing it out in full, this means
 
-			<p>
-				Writing it out in full, this means
+			$${\partial f \over \partial x} = \lambda{\partial g \over \partial x}$$
+			$${\partial f \over \partial y} = \lambda{\partial g \over \partial y}$$
+			$${\partial f \over \partial z} = \lambda{\partial g \over \partial z}$$
 
-				$${\partial f \over \partial x} = \lambda{\partial g \over \partial x}$$
+			with \(g(x,y,z) = k\).
+		</p>
 
-				$${\partial f \over \partial y} = \lambda{\partial g \over \partial y}$$
+		<p>
+			We now have four unknowns (\(\lambda , x,y,z\)) in four equations which could now be solved.
+		</p>
 
-				$${\partial f \over \partial z} = \lambda{\partial g \over \partial z}$$
+	<h2>Derivation</h2>
+		<p>
+			As the variables of \(f(x,y,z)\) must satisfy \(g(x,y,z)\), we could say that \(f\) only moves in directions encompassed
+			by \(g\). The rate of change of a critical point of \(f\) subject to \(g\) would be equal to \(0\) along all of these
+			allowed directions. 
+		</p>
 
-				with \(g(x,y,z) = k\).
+		<p>
+			Let \(\hat u\) be a unit vector in the direction of the tangent to \(g(x,y,z)\), that is, in a direction of \(g\)). Then
+			the directional derivative \(D_u f = 0\) at a critical point \((x_0, y_0, z_0)\), i.e. \(\nabla f \cdot \hat u = 0\),
+			which means \(f\) is orthogonal to \(\hat u\), and therefore is orthogonal to \(g\). What other quantity that we know of
+			that is also orthogonal to \(g\ \)? \(\nabla g(x,y,z)\)! <strong>\(\mathbf{\nabla f(x,y,z)}\) must be parallel to 
+			(\mathbf{\nabla g(x,y,z)}\) at \(\mathbf{(x_0,y_0,z_0)}\)</strong>. Hence we could formulate
 
-			</p>
+			$$\nabla f(x,y,z) = \lambda \nabla g(x,y,z)$$
 
-			<p>
-				We now have four unknowns (\(\lambda , x,y,z\)) in four equations which could now be solved.
-			</p>
+			The constant \(\lambda\) is present as \(\nabla f(x_0,y_0,z_0)\) does not necessarily have the same magnitude as \(\nabla
+			g(x_0,y_0,z_0)\).
+		</p>
 
-		<h2>Derivation</h2>
-			<p>
-				As the variables of \(f(x,y,z)\) must satisfy \(g(x,y,z)\), we could say that \(f\) only moves in directions encompassed by \(g\). The rate of change of a critical point of \(f\) subject to \(g\) would be equal to \(0\) along all of these allowed directions. 
-			</p>
+	<h2>Lagrange Multipliers with Multiple Constraints</h2>
+		<p>
+			Using the same argument as above, given \(n\) constraints \(g_i(x,y,z) = k_i\) where \(i = 1,2 \dots n\), \(f(x,y,z)\)
+			could only move along the directions provided by the constraints. The directional derivatives of \(f\) in these directions
+			must all equal to \(0\) for a critical point \((x_0,y_0,z_0)\), i.e. \(D_{u_i} f = 0\) in the unit vectors \(\hat u_i\)
+			tangent to \(g_i\) are equal to \(0\). Therefore, \(\nabla f(x,y,z)\) is parallel to all \(\nabla g_i(x,y,z)\).
+		</p>
 
-			<p>
-				Let \(\hat u\) be a unit vector in the direction of the tangent to \(g(x,y,z)\), that is, in a direction of \(g\)). Then the directional derivative \(D_u f = 0\) at a critical point \((x_0, y_0, z_0)\), i.e. \(\nabla f \cdot \hat u = 0\), which means \(f\) is orthogonal to \(\hat u\), and therefore is orthogonal to \(g\). What other quantity that we know of that is also orthogonal to \(g\ \)? \(\nabla g(x,y,z)\)! <strong>\(\mathbf{\nabla f(x,y,z)}\) must be parallel to \(\mathbf{\nabla g(x,y,z)}\) at \(\mathbf{(x_0,y_0,z_0)}\)</strong>. Hence we could formulate
+		<p>
+			We end up with 
+			
+			$$\nabla f(x,y,z) = \lambda_1 \nabla g_1(x,y,z)$$
+			$$\nabla f(x,y,z) = \lambda_2 \nabla g_2(x,y,z)$$
+			$$\vdots$$
+			$$\nabla f(x,y,z) = \lambda_n \nabla g_n(x,y,z)$$
+		</p>
 
-				$$\nabla f(x,y,z) = \lambda \nabla g(x,y,z)$$
+		<p>
+			If we add these equations together,
 
-				The constant \(\lambda\) is present as \(\nabla f(x_0,y_0,z_0)\) does not necessarily have the same magnitude as \(\nabla g(x_0,y_0,z_0)\).
-			</p>
+			$$n \nabla f(x,y,z) = \lambda_1 \nabla g_1(x,y,z) +\dots+ \lambda_n \nabla g_n(x,y,z)$$
 
-		<h2>Lagrange Multipliers with Multiple Constraints</h2>
-			<p>
-				Using the same argument as above, given \(n\) constraints \(g_i(x,y,z) = k_i\) where \(i = 1,2 \dots n\), \(f(x,y,z)\) could only move along the directions provided by the constraints. The directional derivatives of \(f\) in these directions must all equal to \(0\) for a critical point \((x_0,y_0,z_0)\), i.e. \(D_{u_i} f = 0\) in the unit vectors \(\hat u_i\) tangent to \(g_i\) are equal to \(0\). Therefore, \(\nabla f(x,y,z)\) is parallel to all \(\nabla g_i(x,y,z)\).
-			</p>
+			Dividing both sides by \(n\),
 
-			<p>
-				We end up with 
+			$$\nabla f(x,y,z) = \frac 1n [\lambda_1 g_1(x,y,z) +\dots+ \lambda_n g_n(x,y,z)]$$
 
-				$$\nabla f(x,y,z) = \lambda_1 \nabla g_1(x,y,z)$$
-				$$\nabla f(x,y,z) = \lambda_2 \nabla g_2(x,y,z)$$
-				$$\vdots$$
-				$$\nabla f(x,y,z) = \lambda_n \nabla g_n(x,y,z)$$
-			</p>
+			As \(\lambda_i\) divided by \(n\) is just another constant, we can write 
 
-			<p>
-				If we add these equations together,
+			$$\nabla f(x,y,z) = \sum^n_{i=1} \mu_i \nabla g_i(x,y,z)$$
+		</p>
 
-				$$n \nabla f(x,y,z) = \lambda_1 \nabla g_1(x,y,z) +\dots+ \lambda_n \nabla g_n(x,y,z)$$
+	<footer>
+		<h4>Footnotes</h4>
+		<p>
+			<strong>[1]</strong> With \(n\) variables, simply replace \(x,y,z\) in the equations above with \(x_1,x_2 \dots x_n\).
+		</p>
+	</footer>
 
-				Dividing both sides by \(n\),
-
-				$$\nabla f(x,y,z) = \frac 1n [\lambda_1 g_1(x,y,z) +\dots+ \lambda_n g_n(x,y,z)]$$
-
-				As \(\lambda_i\) divided by \(n\) is just another constant, we can write 
-
-				$$\nabla f(x,y,z) = \sum^n_{i=1} \mu_i \nabla g_i(x,y,z)$$
-			</p>
-
-		<footer>
-			<h4>Footnotes</h4>
-			<p>
-				<strong>[1]</strong> With \(n\) variables, simply replace \(x,y,z\) in the equations above with \(x_1,x_2 \dots x_n\).
-			</p>
-		</footer>
-
-
-
-
-	</body>
-	</html>
+</body>
+</html>
