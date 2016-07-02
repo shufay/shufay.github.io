@@ -3,13 +3,14 @@
 	<head>
 		<meta charset = "utf-8">
 		<meta name=viewport content="width=device-width, initial-scale=1">
-		<title>Lagrange Multipliers</title>
 		<link rel = "stylesheet" href = "docs.css">
 		<link href='https://fonts.googleapis.com/css?family=Neuton' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Gentium+Basic' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Playfair+Display+SC' rel='stylesheet' type='text/css'>
 		<script type="text/javascript" async
 	  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-	</script>
+		</script>
+		<title>Lagrange Multipliers</title>
 	</head>
 
 	<body>
@@ -58,7 +59,7 @@
 			</p>
 
 			<p>
-				Let \(\hat u\) be a unit vector in the direction of the tangent to \(g(x,y,z)\), that is, in a direction of \(g\)). Then the directional derivative \(D_u f = 0\) at a critical point \((x_0, y_0, z_0)\), i.e. \(\nabla f \cdot \hat u = 0\), which means \(f\) is orthogonal to \(\hat u\), and therefore is orthogonal to \(g\). What other quantity that we know of that is also orthogonal to \(g\ \)? \(\nabla g(x,y,z)\)! <strong>\(\mathbf{\nabla f(x,y,z)}\) must be parallel to \(\mathbf{\nabla g(x,y,z)}\) at \(\mathbf{(x_0,y_0,z_0)}\)</strong>. Hence we could formulate
+				Let \(\hat u\) be a unit vector in the direction of the tangent to \(g(x,y,z)\), that is, in a direction of \(g\). Then the directional derivative \(D_u f = 0\) at a critical point \((x_0, y_0, z_0)\), i.e. \(\nabla f \cdot \hat u = 0\), which means \(f\) is orthogonal to \(\hat u\), and therefore is orthogonal to \(g\). What other quantity that we know of that is also orthogonal to \(g\ \)? \(\nabla g(x,y,z)\)! <strong>\(\mathbf{\nabla f(x,y,z)}\) must be parallel to \(\mathbf{\nabla g(x,y,z)}\) at \(\mathbf{(x_0,y_0,z_0)}\)</strong>. Hence we could formulate:
 
 				$$\nabla f(x,y,z) = \lambda \nabla g(x,y,z)$$
 
@@ -88,7 +89,7 @@
 
 				$$\nabla f(x,y,z) = \frac 1n [\lambda_1 g_1(x,y,z) +\dots+ \lambda_n g_n(x,y,z)]$$
 
-				As \(\lambda_i\) divided by \(n\) is just another constant, we can write 
+				As \(\lambda_i\) divided by \(n\) is just another constant, we can write:
 
 				$$\nabla f(x,y,z) = \sum^n_{i=1} \mu_i \nabla g_i(x,y,z)$$
 			</p>

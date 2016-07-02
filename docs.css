@@ -8,6 +8,7 @@ body
 
 h1
 {
+	font-family: "Playfair Display SC", "Neuton", serif;
 	font-size: 150%;
 	padding-top: 1em;
 }
@@ -25,12 +26,27 @@ footer
 	font-size: 0.9em;
 }
 
+a:link
+{
+	color: black;
+}
+
+a:visited
+{
+	color:black;
+}
+
 .notes
 {
 	margin: 0.5em 0 0.5em 0;
 	padding: 0.4em 0 0.5em 0;
 	border-top: 1px solid black;
 	border-bottom: 1px solid black;
+}
+
+#special
+{
+	font-family: "Playfair Display SC", "Neuton", serif;
 }
 
 /*Mobile Devices*/
