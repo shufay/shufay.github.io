@@ -1,0 +1,59 @@
+<DOCTYPE! html>
+<html>
+<head>
+	<meta charset = "utf-8">
+	<meta name=viewport content="width=device-width, initial-scale=1">
+	<link rel = "stylesheet" href = "docs.css">
+	<link href='https://fonts.googleapis.com/css?family=Neuton' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Gentium+Basic' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Playfair+Display+SC' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" async
+	  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+	</script>
+	<title>Even Potential Theorem</title>
+</head>
+
+<body>
+	<h1>The Even Potential Theorem</h1>
+		<p>
+			<strong>Theorem: </strong>If \(V(x)\) is an even function \((V(-x) = V(x))\), then \(\psi(x)\) can always be taken to be either even or odd.
+		</p>
+
+		<h3>Proof</h3>
+
+		<p>
+			$$
+			-\frac{\hbar}{2m} \frac{d^2\psi}{dx^2} + V(x) = E\psi \label{1} \tag{1}
+			$$
+
+			If \(\psi{(x)}\) satisfies \((\ref{1})\), then, changing variables \(x \to -x\) and noting that \(\frac{d^2}{d(-x)^2} = \frac{d^2}{dx^2}\),
+
+			$$
+			-\frac{\hbar^2}{2m} \frac{d^2\psi(-x)}{dx^2} + V(-x)\psi(-x) = E\psi(-x)
+			$$
+
+			so if \(V(-x) = V(x)\), then \(\psi(-x)\) also satisfies \((\ref{1})\). It follows that 
+
+			$$
+			\psi_{+}(x) = \psi(x)+\psi(-x)
+			$$
+
+			which is even: \(\psi_{+}(-x) = \psi_{+}(x)\), and
+
+			$$
+			\psi_{-}(x) = \psi(x)-\psi(-x)
+			$$ 
+
+			which is odd: \(\psi_{-}(-x) = -\psi_{-}(x)\), both satisfy \((\ref{1})\). But \(\psi(x) = \frac{1}{2} [\psi_{+}(x)+\psi_{-}(x)]\), so <strong>any solution can be expressed as a linear combination of even and odd solutions.</strong>
+		</p>
+
+	<footer>
+		<p>
+			<strong>Source: </strong><em>D.J.Griffiths, Introduction to Quantum Mechanics, 2nd Ed. Prentice Hall, 2005.</em>
+		</p>
+	</footer>
+	
+</body>
+</html>
+	
+
