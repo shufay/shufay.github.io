@@ -1,0 +1,65 @@
+<DOCTYPE! html>
+<html>
+<head>
+	<meta charset = "utf-8">
+	<meta name=viewport content="width=device-width, initial-scale=1">
+	<link rel = "stylesheet" href = "docs.css">
+	<link href='https://fonts.googleapis.com/css?family=Neuton' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Gentium+Basic' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Playfair+Display+SC' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" async
+	  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+	</script>
+	
+	<title>Coefficients of a Linear Combination of Quantum States</title>
+</head>
+
+<body>
+	<h1>Coefficients of a Linear Combination of Quantum States</h1>
+		<p>
+			A postulate of quantum mechanics claims that given \(n\) states of a system corresponding to wavefunctions \(\psi_1(x)\), \(\psi_2(x) \dots \psi_n(x)\), we can define a <em>superposition</em> of these states as a linear combination of \(\psi_1(x) \dots \psi_n(x)\):
+
+			$$ \Psi(x) = c_1\psi_1(x) + c_2\psi_2(x) + \dots + c_n\psi_n(x) $$ 
+
+			where \(c_n\) are complex coefficients.
+		</p>
+
+		<p>This article will show that if the quantum states of the system are <em>orthogonal</em>, \(|c_n|^2\) gives the probability of finding the system in the  state \(\psi_n(x)\).
+		</p>
+
+		<p class = "notes">
+			<strong>Orthogonal States</strong>&nbsp;If \(\psi_1\) and \(\psi_2\) satisfy \(\int_{-\infty}^{\infty} \psi_1^*\psi_2 \ dx=0\), these states are said to be orthogonal to each other. This is rather similar to the dot product for vectors &mdash; if \(\mathbf{a}\cdot\mathbf{b}=0\), \(\mathbf{a}\) and \(\mathbf{b}\) are orthogonal to each other, i.e. they do not 'lie' in each other.
+		</p>
+
+		<p>For simplicity I'll take \(\Psi=c_1\psi_1+c_2\psi_2\) , a superposition of only two states. The probability density function for this state is thus:
+
+			$$
+			\begin{align} 
+			|\Psi|^2 
+			&=|c_1\psi_1+c_2\psi_2|^2 \\
+			&= (c_1\psi_1+c_2\psi_2)(c_1^*\psi_1^*+c_2^*\psi_2^*) \\
+			&= |c_1|^2|\psi_1|^2+|c_2|^2|\psi_2|^2+c_1\psi_1 c_2^*\psi_2^*+c_1^*\psi_1^* c_2\psi_2 
+			\end{align}
+			$$
+
+			The last two terms are interference terms from the interference of the two wavefunctions. It gives a correction to the classical addition of probabilities by taking into account the interference between the wavefunctions.   
+		</p>
+
+		<p>
+			Given that \(\psi_1\) and \(\psi_2\) are orthogonal and \(\Psi\), \(\psi_1\) and \(\psi_2\) are normalised,
+
+			$$
+			\begin{align}
+			\int_{-\infty}^{\infty}|\Psi|^2 \ dx
+			&= \int_{-\infty}^{\infty}|c_1|^2 |\psi_1|^2 \ dx + \int_{-\infty}^{\infty}|c_2|^2 |\psi_2|^2 \ dx + c_1 c_2^*\int_{-\infty}^{\infty} \psi_2^* \psi_1 \ dx + c_1^* c_2\int_{-\infty}^{\infty}\psi_1^* \psi_2 \ dx \\
+			&= |c_1|^2 + |c_2|^2 \\
+			&= 1
+			\end{align}
+			$$
+
+			Thus \(|c_1|^2\) and \(|c_2|^2\) are the probabilities of finding \(\Psi\) in the state \(\psi_1\) and \(\psi_2\) respectively.
+		</p>
+
+
+</body>
+</html>      
