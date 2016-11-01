@@ -7,7 +7,6 @@
 	<script type="text/javascript" async
 	  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
 	</script>
-	
 	<title>Ehrenfest's Theorem</title>
 </head>
 
@@ -15,7 +14,7 @@
 	<h1>Ehrenfest's Theorem</h1>
 	<h2>The Correspondence Between Quantum and Classical Mechanics</h2>
 		<p>
-			This article will show that the mean values of the 1-dimensional position \(x\), momentum \(p\) and force \(\frac{\partial{V}}{\partial{x}}\) as described by the wavefunction \(\psi\), which is a solution to the Schr&#246;dinger equation, satisfies the Newtonian laws of motion in the form 
+			This article will show that the mean values of the 1-dimensional position \(x\), momentum \(p\) and force \(\frac{\partial{V}}{\partial{x}}\) as described by the wavefunction \(\psi\), which is a solution to the Schr&#246;dinger equation, satisfies the Newtonian laws of motion in the form
 
 			$$
 			\frac{dx}{dt} = \frac{p}{m} \tag{1}
@@ -39,34 +38,34 @@
 			The mean value of \(x\) is given by
 
 			$$ 
-			\langle{x}\rangle 
-			= \int_{-\infty}^{\infty} x \lvert \psi \rvert^2 \ dx 
-			= \int_{-\infty}^{\infty} x\psi^*\psi \ dx 
+			\langle{x}\rangle
+			= \int_{-\infty}^{\infty} x \lvert \psi \rvert^2 \ dx
+			= \int_{-\infty}^{\infty} x\psi^*\psi \ dx
 			$$
 
 			taking the derivative with respect to time \(t\),
 
 			$$
 			\begin{align}
-			\frac{d\langle{x}\rangle}{dt} 
+			\frac{d\langle{x}\rangle}{dt}
 			&amp;= \frac{d}{dt} \int_{-\infty}^{\infty} x\psi^*\psi \ dx \\[9pt]
 			&amp;= \int_{-\infty}^{\infty} \frac{\partial}{\partial t} (x\psi^*\psi) \ dx \\[9pt]
-			&amp;= \int_{-\infty}^{\infty} x \left(\psi \frac{\partial \psi^*}{\partial t} + \psi^* \frac{\partial \psi}{\partial t} \right) \ dx 
+			&amp;= \int_{-\infty}^{\infty} x \left(\psi \frac{\partial \psi^*}{\partial t} + \psi^* \frac{\partial \psi}{\partial t} \right) \ dx
 			\end{align}
 			$$
 
-			\(\frac{d}{dt}\) could be brought into the integral due to the <a href = "https://en.wikipedia.org/wiki/Leibniz_integral_rule" target = "_blank">Leibniz integral rule</a>.
+			\(\frac{d}{dt}\) could be brought into the integral due to the <a href="https://en.wikipedia.org/wiki/Leibniz_integral_rule" target = "_blank">Leibniz integral rule</a>.
 		</p>
 		<p>
 			The Schr&#246;dinger equation gives, along with its complex conjugate:
 
 			$$
-			i\hbar \frac{\partial \psi}{\partial t} = 
+			i\hbar \frac{\partial \psi}{\partial t} =
 			-\frac{\hbar^2}{2m} \frac{\partial^2 \psi}{\partial x^2} + V\psi
 			$$
 
 			$$
-			-i\hbar \frac{\partial \psi^*}{\partial t} = 
+			-i\hbar \frac{\partial \psi^*}{\partial t} =
 			-\frac{\hbar^2}{2m} \frac{\partial^2 \psi^*}{\partial x^2} + V\psi^*
 			$$
 
@@ -74,11 +73,11 @@
 
 			$$ 
 			\begin{align}
-			\frac{d\langle{x}\rangle}{dt} 
+			\frac{d\langle{x}\rangle}{dt}
 			&amp;= \frac{i\hbar}{2m} \int_{-\infty}^{\infty} x \left(\psi^* \frac{\partial^2 \psi}{\partial{x^2}} - \psi \frac{\partial^2 \psi^*}{\partial{x^2}} \right) \ dx \\[9pt]
 			&amp;= \frac{i\hbar}{2m} \int_{-\infty}^{\infty} x \frac{\partial}{\partial x} \left(\psi^* \frac{\partial \psi}{\partial x} - \psi \frac{\partial \psi^*}{\partial x} \right) \ dx \\[9pt]
 			&amp;= \frac{i\hbar}{2m} \left[x \left(\psi^* \frac{\partial \psi}{\partial x} - \psi \frac{\partial \psi^*}{\partial x} \right) - \int \left(\psi^* \frac{\partial \psi}{\partial x} - \psi \frac{\partial \psi^*}{\partial x} \right) \ dx \right]_{-\infty}^{\infty} \\[9pt]
-			&amp;= -\frac{i\hbar}{2m} \int_{-\infty}^{\infty} \left( \psi^* \frac{\partial \psi}{\partial x} - \psi \frac{\partial \psi^*}{\partial x} \right) \ dx 
+			&amp;= -\frac{i\hbar}{2m} \int_{-\infty}^{\infty} \left( \psi^* \frac{\partial \psi}{\partial x} - \psi \frac{\partial \psi^*}{\partial x} \right) \ dx
 			\end{align}
 			$$
 
@@ -88,25 +87,25 @@
 			\begin{align}
 			&amp; \frac{i\hbar}{2m} \left\{ \left[\psi \psi^* - \int \psi^* \frac{\partial \psi}{\partial x} \right]_{-\infty}^{\infty} - \int_{-\infty}^{\infty} \psi^* \frac{\partial \psi}{\partial x} \ dx \right\} \\[9pt]
 			&amp;= -\frac{i\hbar}{m} \int_{-\infty}^{\infty} \psi^* \frac{\partial \psi}{\partial x} \ dx \\[9pt]
-			&amp;= \frac{1}{m} \int_{-\infty}^{\infty} \psi^* \left(-i\hbar \frac{\partial}{\partial x} \right) \psi \ dx 
+			&amp;= \frac{1}{m} \int_{-\infty}^{\infty} \psi^* \left(-i\hbar \frac{\partial}{\partial x} \right) \psi \ dx
 			\end{align}
 			$$
 
-			(Note that \(\psi \psi^*\) is zero at \(\pm \infty\)) 
+			(Note that \(\psi \psi^*\) is zero at \(\pm \infty\))
 		</p>
 		<p>
 
-			Here \(\langle{p}\rangle = \int_{-\infty}^{\infty} \psi^* \left(-i\hbar \frac{\partial}{\partial x} \right) \psi \ dx \) is the mean momentum <strong><a href = "#footnotes">[1]</strong></a> and \(\hat p = -i\hbar \frac{\partial}{\partial x}\) is the quantum mechanical momentum operator.
+			Here \(\langle{p}\rangle = \int_{-\infty}^{\infty} \psi^* \left(-i\hbar \frac{\partial}{\partial x} \right) \psi \ dx \) is the mean momentum <strong><a href="#footnotes">[1]</strong></a> and \(\hat p = -i\hbar \frac{\partial}{\partial x}\) is the quantum mechanical momentum operator.
 		</p>
 		<p>
 			Therefore, we end up with \((\ref{3})\)
 
 			$$
 			\bbox[7pt, border: 1px solid black] {
-			\frac{d \langle{x}\rangle}{dt} 
-			= \frac{1}{m} \int_{-\infty}^{\infty} \psi^* \left(-i\hbar \frac{\partial}{\partial x} \right) \psi \ dx 
-			= \frac{\langle{p}\rangle}{m} 
-			} 
+			\frac{d \langle{x}\rangle}{dt}
+			= \frac{1}{m} \int_{-\infty}^{\infty} \psi^* \left(-i\hbar \frac{\partial}{\partial x} \right) \psi \ dx
+			= \frac{\langle{p}\rangle}{m}
+			}
 			$$
 		</p>
 
@@ -115,15 +114,15 @@
 			With the result \(\langle{p}\rangle = -i\hbar \int_{-\infty}^{\infty}\psi \frac{\partial \psi}{\partial x} \ dx\), we start off by differentiating \(\langle{p}\rangle\) with respect to time,
 
 			$$
-				\begin{align} 
-				\frac{d\langle{p}\rangle}{dt} 
+				\begin{align}
+				\frac{d\langle{p}\rangle}{dt}
 				&amp;= -i\hbar \frac{d}{dt} \int_{-\infty}^{\infty} \psi \frac{\partial \psi}{\partial x} \ dx \\[9pt]
 				&amp;= -i\hbar \int_{-\infty}^{\infty}\frac{\partial}{\partial t}\left(\psi \frac{\partial \psi}{\partial x}\right) \ dx \\[9pt]
 				&amp;= -i\hbar \int_{-\infty}^{\infty} \left(\frac{\partial{\psi^*}}{\partial t} \frac{\partial \psi}{\partial x} + \psi^* \frac{\partial^2 \psi}{\partial{t}\partial{x}}\right) \ dx
 				\end{align}
 			$$
 
-			Noting that \(\frac{\partial^2 \psi}{\partial{t}\partial{x}} = \frac{\partial^2 \psi}{\partial{x}\partial{t}}\) from the <a href = "https://en.wikipedia.org/wiki/Symmetry_of_second_derivatives" target = "_blank">symmetry of second derivatives</a>, we could write
+			Noting that \(\frac{\partial^2 \psi}{\partial{t}\partial{x}} = \frac{\partial^2 \psi}{\partial{x}\partial{t}}\) from the <a href="https://en.wikipedia.org/wiki/Symmetry_of_second_derivatives" target="_blank">symmetry of second derivatives</a>, we could write
 
 			$$
 				\begin{align} &amp;
@@ -149,7 +148,7 @@
 			$$
 
 			The term collapses to zero as \(\psi, \psi^*, \frac{\partial \psi}{\partial x}, \frac{\partial \psi^*}{\partial x}\) is zero at \(\pm \infty\).
-		</p>	
+		</p>
 		<p>
 			Hence,
 
@@ -168,14 +167,14 @@
 				= -\left\langle \frac{\partial V}{\partial x}\right\rangle
 			} (\ref{4})
 			$$
-		</p>	
+		</p>
 
-	<footer id = "footnotes">
+	<footer id="footnotes">
 		<h4>Footnotes</h4>
-		<p>	
+		<p>
 			<strong>[1]</strong> The mean value of a physical variable \(R(x,p)\) over all \(x\) can be calculated with \(\langle{R}\rangle = \int_{-\infty}^{\infty} \psi^* \hat{R}(x, -i\hbar(\partial/\partial x)) \psi \ dx\), where \(\hat{R}\) is the quantum mechanical operator for \(R\). \(\hat{R}\) could be found by replacing the \(x\)s and \(p\)s in \(R(x,p)\) with their respective operators.
 		</p>
-	</footer>	
+	</footer>
 
 </body>
 </html>

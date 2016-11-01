@@ -13,20 +13,20 @@
 <body>
 	<h1>Lagrange Multipliers</h1>
 		<p>
-			The Lagrange method is a tool used to find the coordinates of the maximums or minimums of a multivariable function subject to constraints. It looks for the critical points (or stationary points) of a function but <strong>does not tell you if they are maxima or minima</strong>. The extremums could only be determined by testing the coordinates found.  
+			The Lagrange method is a tool used to find the coordinates of the maximums or minimums of a multivariable function subject to constraints. It looks for the critical points (or stationary points) of a function but <strong>does not tell you if they are maxima or minima</strong>. The extremums could only be determined by testing the coordinates found.
 		</p>
 
 	<h2>Lagrange Multipliers with One Constraint</h2>
-		<p class = "notes">
-			<strong>Note:</strong> The Lagrange method applies to any \(nth\)-dimensional function, but for simplicity I'll just illustrate the method with three variables. See the footnotes for more detail <a href = "#footnotes"><strong>[1]</strong></a>.
+		<p class="notes">
+			<strong>Note:</strong> The Lagrange method applies to any \(nth\)-dimensional function, but for simplicity I'll just illustrate the method with three variables. See the footnotes for more detail <a href="#footnotes"><strong>[1]</strong></a>.
 		</p>
 
 		<p>
-			Given a function \(f(x,y,z)\) subject to a constraint \(g(x,y,z) = k\) where \(k\) is some constant, the stationary points satisfy 
+			Given a function \(f(x,y,z)\) subject to a constraint \(g(x,y,z) = k\) where \(k\) is some constant, the stationary points satisfy
 
 			$$\nabla f(x,y,z) = \lambda \nabla g(x,y,z)$$
 
-			where \(\lambda\) is some constant known as the <strong>Lagrange multiplier</strong> and \(\nabla f(x,y,z)\) and \(\nabla g(x,y,z)\) are the gradients of \(f\) and \(g\) respectively. 
+			where \(\lambda\) is some constant known as the <strong>Lagrange multiplier</strong> and \(\nabla f(x,y,z)\) and \(\nabla g(x,y,z)\) are the gradients of \(f\) and \(g\) respectively.
 		</p>
 
 		<p>
@@ -52,7 +52,7 @@
 
 	<h2>Derivation</h2>
 		<p>
-			As the variables of \(f(x,y,z)\) must satisfy \(g(x,y,z)\), we could say that \(f\) only moves in directions encompassed by \(g\). The rate of change of a critical point of \(f\) subject to \(g\) would be equal to \(0\) along all of these allowed directions. 
+			As the variables of \(f(x,y,z)\) must satisfy \(g(x,y,z)\), we could say that \(f\) only moves in directions encompassed by \(g\). The rate of change of a critical point of \(f\) subject to \(g\) would be equal to \(0\) along all of these allowed directions.
 		</p>
 
 		<p>
@@ -69,7 +69,7 @@
 		</p>
 
 		<p>
-			We end up with 
+			We end up with
 
 			$$\nabla f(x,y,z) = \lambda_1 \nabla g_1(x,y,z)$$
 			$$\nabla f(x,y,z) = \lambda_2 \nabla g_2(x,y,z)$$
@@ -91,12 +91,11 @@
 			$$\nabla f(x,y,z) = \sum^n_{i=1} \mu_i \nabla g_i(x,y,z)$$
 		</p>
 
-	<footer id = "footnotes">
+	<footer id="footnotes">
 		<h4>Footnotes</h4>
 		<p>
 			<strong>[1]</strong> With \(n\) variables, simply replace \(x,y,z\) in the equations above with \(x_1,x_2 \dots x_n\).
 		</p>
 	</footer>
-
 </body>
 </html>
