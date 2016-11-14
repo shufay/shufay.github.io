@@ -5,7 +5,7 @@ body
 	font-family: "Neuton", "Gentium Basic", serif;
 	font-size: 110%;
 	margin: 2em auto 8em auto;
-	width: 40em;
+	width: 35em;
 }
 
 h1
@@ -18,6 +18,11 @@ h1
 h2
 {
 	font-size: 125%;
+	padding-top: 1em;
+}
+
+h3
+{
 	padding-top: 1em;
 }
 
@@ -44,4 +49,9 @@ a
 #special
 {
 	font-family: "Playfair Display SC", "Neuton", serif;
+}
+
+hr
+{
+	border: 1px solid black;
 }
