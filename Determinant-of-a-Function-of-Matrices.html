@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name=viewport content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="docs.css">
+	<script type="text/javascript" async
+	  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+	</script>
+
+	<title>The Determinant of a Function of Matrices</title>
+</head>
+
+<body>
+	<h1>The Determinant of a Function of Matrices</h1>
+		<p>
+			Functions of matrices are defined by their Taylor series expansions; for example, for some matrix \(\mathsf{M}\)
+
+			$$
+			e^\mathsf{M}=\mathsf{I+M}+\frac{1}{2}\mathsf{M}^2+\frac{1}{3!}\mathsf{M}^3+\dots
+			$$
+		</p>
+		<p class="notes">
+			<strong>Theorem</strong>&nbsp;If \(\mathsf{M}\) is diagonalisable, then
+
+			$$
+			\mathrm{det}(e^\mathsf{M})=e^{\mathsf{Tr(M)}}
+			$$
+		</p>
+		<h3>Proof</h3>
+			<p>
+				Let \(\mathbf{v}\) be an eigenvector of \(e^\mathsf{M}\).
+
+				$$
+				e^\mathsf{M}\mathbf{v}
+				=(\mathsf{I+M}+\frac{1}{2}\mathsf{M}^2+\frac{1}{3!}\mathsf{M}^3+\dots)\mathbf{v}
+				=\lambda\mathbf{v}
+				$$
+
+				where \(\lambda\) is the corresponding eigenvalue.
+			</p>
+			<p>
+				If \(\mathbf{v}\) is also an eigenvector of \(\mathsf{M}\), then
+
+				$$
+				\mathsf{M}\mathbf{v}=\mu\mathbf{v}
+				$$
+
+				$$
+				\begin{align}
+				e^{\mathsf{M}}\mathbf{v}
+				&amp;=(\mathsf{I+M}+\frac{1}{2}\mathsf{M}^2+\frac{1}{3!}\mathsf{M}^3+\dots)\mathbf{v} \\
+				&amp;=\mathbf{v}+\mathsf{M}\mathbf{v}+\frac{1}{2}\mathsf{M}^2\mathbf{v}+\frac{1}{3!}\mathsf{M}^3\mathbf{v}+\dots \\
+				&amp;=\mathbf{v}+\mu\mathbf{v}+\frac{1}{2}\mu^2\mathbf{v}+\frac{1}{3!}\mu^3\mathbf{v}+\dots \\
+				&amp;=\mathbf{v}(1+\mu+\frac{1}{2}\mu^2+\frac{1}{3!}\mu^3+\dots) \\
+				&amp;=e^{\mu}\mathbf{v}
+				\end{align}
+				$$
+
+				Hence,
+
+				$$
+				\lambda\mathbf{v}=e^{\mu}\mathbf{v} \Rightarrow \lambda=e^{\mu}
+				$$
+			</p>
+			<p>
+				As this result applies to any other eigenvector \(\mathbf{v}_n\) with eigenvalue \(\lambda_n\) for \(e^\mathsf{M}\) and eigenvalue \(\mu_n\) for \(\mathsf{M}\), we have
+
+				$$
+				\begin{align}
+				\mathrm{det}(e^\mathsf{M})&amp;=\lambda_1\lambda_1\dots\lambda_n \\
+				&amp;=e^{\mu_1}e^{\mu_2}{\dots}e^{\mu_n} \\
+				&amp;=e^{\mu_1+\mu_2+\dots+\mu_n} \\
+				&amp;=e^{\mathsf{Tr(M)}}
+				\end{align}
+				$$
+			</p>
+			<p>
+				Therefore,
+
+				$$
+				\bbox[7pt, border: 1px solid black] {
+				\mathrm{det}(e^\mathsf{M})=e^{\mathsf{Tr(M)}}
+				}
+				$$
+			</p>
+			<p>
+				Now we are left to prove that any eigenvector \(\mathbf{v}_n\) of \(e^\mathsf{M}\) is also an eigenvector of \(\mathsf{M}\). We will use the following theorem <a href="#footnotes"><strong>[1]</strong></a>:
+			</p>
+			<p class="notes">
+				<strong>Theorem</strong>&nbsp;If two diagonalisable matrices commute then they are simultaneously diagonalisable.
+			</p>
+			<p>
+				If we have some similiarity matrix \(\mathsf{S}\) that diagonalises \(\mathsf{M}\), could it diagonalise \(\mathsf{M}^n\) as well?
+			</p>
+			<p>
+				i.e. \(\mathsf{SMS}^{-1}=\mathsf{D_1}\) and \(\mathsf{SM}^n\mathsf{S}^{-1}=\mathsf{D_n} \qquad (1)\)
+			</p>
+			<p>
+				Evaluating the commutator of \(\mathsf{M}\) and \(\mathsf{M}^n\),
+
+				$$
+				[\mathsf{M,M}^n]=\mathsf{MM}^n-\mathsf{M}^{n}\mathsf{M}=\mathsf{M}^{n+1}-\mathsf{M}^{n+1}=\mathsf{0}
+				$$
+
+				So \((1)\) is satisfied.
+			</p>
+			<p>
+				Applying \(\mathsf{S}\) to \(e^\mathsf{M}\),
+
+				$$
+				\begin{align}
+				\mathsf{S}e^{\mathsf{M}}\mathsf{S}^{-1}
+				&amp;=\mathsf{S}(\mathsf{I+M}+\frac{1}{2}\mathsf{M}^2+\frac{1}{3!}\mathsf{M}^3+\dots)\mathsf{S}^{-1} \\
+				&amp;=\mathsf{SIS}^{-1}+\mathsf{SMS}^{-1}+\frac{1}{2}\mathsf{SM}^{2}\mathsf{S}^{-1}+\frac{1}{3!}\mathsf{SM}^{3}\mathsf{S}^{-1}+\dots \\
+				&amp;=\mathsf{I+D_1}+\frac{1}{2}\mathsf{D_2}+\frac{1}{3!}\mathsf{D_3}+\dots 
+				\end{align}
+				$$
+
+				which is another diagonal matrix. Hence \(\mathsf{S}\) also diagonalises \(e^\mathsf{M}\). Noting that the matrix \(\mathsf{S}^{-1}=(\mathbf{v}_1 \ \mathbf{v}_1 \dots \mathbf{v}_n)\) has columns \(\mathbf{v}_n\) that are the eigenvectors of \(\mathsf{M}\) (in order to diagonalise \(\mathsf{M}\)), we conclude that they are also the eigenvectors of \(e^\mathsf{M}\).
+			</p>
+			<p>
+				Therefore, \(e^\mathsf{M}\) and \(\mathsf{M}\) have the same eigenvectors.
+			</p>
+			<p>
+				The proof is complete.
+			</p>
+	<footer id="footnotes">
+		<p>
+			<strong>[1]</strong> I realised there was a simpler approach to proving this. Notice first that 
+
+			$$
+			\begin{align}
+			(\mathsf{SMS}^{-1})^n
+			&amp;=\underbrace{(\mathsf{SMS}^{-1})(\mathsf{SMS}^{-1})(\mathsf{SMS}^{-1})\dots (\mathsf{SMS}^{-1})}_{n \text{ times}} \\
+			&amp;=\mathsf{SM \ S}^{-1}\mathsf{S \ M \ S}^{-1}\mathsf{S \ M \ S}^{-1}\dots\mathsf{S \ MS}^{-1} \\
+			&amp;=\mathsf{SM}^{n}\mathsf{S}^{-1}
+			\end{align}
+			$$
+
+			Applying this result to \(\mathsf{S}e^{\mathsf{M}}\mathsf{S}^{-1}\) we get
+
+			$$
+			\begin{align}
+			\mathsf{S}e^{\mathsf{M}}\mathsf{S}^{-1}
+			&amp;=\mathsf{S}(\mathsf{I+M}+\frac{1}{2}\mathsf{M}^2+\frac{1}{3!}\mathsf{M}^3+\dots)\mathsf{S}^{-1} \\
+			&amp;=\mathsf{SIS}^{-1}+\mathsf{SMS}^{-1}+\frac{1}{2}\mathsf{SM}^{2}\mathsf{S}^{-1}+\frac{1}{3!}\mathsf{SM}^{3}\mathsf{S}^{-1}+\dots \\
+			&amp;=\mathsf{I+SMS}^{-1}+\frac{1}{2}(\mathsf{SMS}^{-1})^2+\frac{1}{3!}(\mathsf{SMS}^{-1})^3+\dots \\
+			&amp;=\mathsf{I+D}+\frac{1}{2}\mathsf{D}^2+\frac{1}{3!}\mathsf{D}^3+\dots
+			\end{align}
+			$$
+		</p>
+
+</body>
+</html>
+
+
