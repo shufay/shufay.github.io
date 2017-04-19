@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name=viewport content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="docs.css">
+	<script type="text/javascript" async
+	  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+	</script>
+	
+	<title>Rolling Friction</title>
+</head>
+
+<body>
+	<h1>Rolling Friction</h1>
+		<p>
+			Consider an extended rigid object. The work done \(W_i\) on a particle of mass \(m_i\) by a net force \(\vec{F}_i\) acting on it is \(W_i=\int \vec{F}_i\cdot d\vec{s}_i\). The total work done on the object is then
+
+			$$
+			W_{tot}=\sum \int \vec{F}_i \cdot d\vec{s}_i \tag{1}
+			$$
+
+			For the case of the rolling wheel, the particle on which the friction force acts is instantaneously stationary, hence the work done by the friction force is zero.
+		</p>
+		<p>	
+			Now there is confusion in this case that when thinking about the translational motion of an object, we could consider the work done by a force as \(\int \vec{F}\cdot d\vec{s}_{cm}\) where \(\vec{s}_{cm}\) is an infinitesimal path of the centre of mass. Going back to equation \((1)\), 
+
+			$$
+			\begin{align}
+			W_{tot}&=\int \vec{F}_1\cdot d\vec{s}_1+\int \vec{F}_2\cdot d\vec{s}_2+\cdots \\
+			&=\int \vec{F}_1\cdot d\vec{s}_1+\int \vec{F}_2\cdot d\vec{s}_2+\cdots \\
+			&=\int (\vec{F}_1+\vec{F}_2+\cdots)\cdot d\vec{s}_{cm} \tag{*} \\
+			&=\int \vec{F}\cdot d\vec{s}_{cm}
+			\end{align} 
+			$$
+
+			Step \((*)\) was only possible if all of the particles translated along the same path, i.e. along \(\vec{s}_{cm}\). Hence if the friction force is the net force acting on the wheel, \(W_{tot}=0\). 
+		</p>
+		<p>
+			Now you may argue that since the friction force is a net force, it would cause the wheel to accelerate, hence it should do work on it, because \(\vec{F}=M\vec{a}_{cm}\) right?
+		</p>
+		<p>
+			Lets take a look at the derivation of the formula.
+		</p>
+		<p>
+			The net force acting on some particle of mass \(m_i\) in an object is \(\vec{F}_i=m_i\vec{a}_i\). The net force acting on the whole body is thus:
+
+			$$
+			\vec{F}=\sum \vec{F}_i=\sum m_i\vec{a}_i
+			$$
+
+			We know that 
+
+			$$
+			\begin{align}
+			\vec{r}_{cm}=\frac{\sum m_i\vec{r}_i}{M}
+			&\implies \vec{v}_{cm}=\frac{\sum m_i\vec{v}_i}{M} \\
+			&\implies \vec{a}_{cm}=\frac{\sum m_i\vec{a}_i}{M}
+			\end{align}
+			$$
+
+			Therefore \(\vec{F}=M \vec{a}_{cm}\).
+		</p>
+		<p>
+			Note that from the beginning of the derivation, we assumed that the particle's motion depended on the force only (\(\vec{F}_i=m_i\vec{a}_i)\), i.e. there were no constraints on the motion of the body. But in the case of the rolling wheel, <strong>there is a constraint and it is that the wheel rolls</strong>, hence the formula cannot be applied here.
+		</p>
+</body>
+</html>
