@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name=viewport content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="docs.css">
+	<script type="text/javascript" async
+	  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+	</script>
+	
+	<title>Rolling Friction</title>
+</head>
+
+<body>
+	<h1>Rolling Friction</h1>
+		<h2>Problem</h2>
+			<p>
+				A sperical object is <strong>rolling without slipping</strong> across a plane. A friction force acts at the point of contact. Does the friction force do work on the object?
+			</p>
+			<img src="https://qph.ec.quoracdn.net/main-qimg-ac8b0b362f76401c2e2e3b7de3d554e6" style="width: 50%; height: 50%"/>
+			<p>
+				A friend was confused and thought the friction force had to do work because \(\int \vec{F}\cdot d\vec{s}_{cm}
+				\), where \(d\vec{s}_{cm}\) is an infinitesimal path of the centre of mass. <strong>Explanation 1</strong> was the explanation I gave (or tried to give). <strong>Explanation 2</strong> was the explanation he gave. What do you think?
+			</p>
+		<h2>Explanation 1</h2>
+			<p>
+				Consider an extended rigid object. The work done \(W_i\) on a particle of mass \(m_i\) by a net force \(\vec{F}_i\) acting on it is \(W_i=\int \vec{F}_i\cdot d\vec{s}_i\). The total work done on the object is then
+
+				$$
+				W_{tot}=\sum \int \vec{F}_i \cdot d\vec{s}_i \tag{1}
+				$$
+
+				For the case of the rolling wheel, the particle on which the friction force acts is instantaneously stationary, hence the work done by the friction force is zero.
+			</p>
+			<p>	
+				Now there is confusion in this case that when thinking about the translational motion of an object, we could consider the work done by a force as \(\int \vec{F}\cdot d\vec{s}_{cm}\). Going back to equation \((1)\), 
+
+				$$
+				\begin{align}
+				W_{tot}&=\int \vec{F}_1\cdot d\vec{s}_1+\int \vec{F}_2\cdot d\vec{s}_2+\cdots \\
+				&=\int \vec{F}_1\cdot d\vec{s}_1+\vec{F}_2\cdot d\vec{s}_2+\cdots \\
+				&=\int (\vec{F}_1+\vec{F}_2+\cdots)\cdot d\vec{s}_{cm} \tag{*} \\
+				&=\int \vec{F}\cdot d\vec{s}_{cm}
+				\end{align} 
+				$$
+
+				Step \((*)\) was only possible if all of the particles translated along the same path, i.e. along \(\vec{s}_{cm}\). Hence if the friction force is the net force acting on the wheel, \(W_{tot}=0\). 
+			</p>
+			<p>
+				Now you may argue that since the friction force is a net force, it would cause the wheel to accelerate, hence it should do work on it, because \(\vec{F}=M\vec{a}_{cm}\) right?
+			</p>
+			<p>
+				Lets take a look at the derivation of the formula.
+			</p>
+			<p>
+				The net force acting on some particle of mass \(m_i\) in an object is \(\vec{F}_i=m_i\vec{a}_i\). The net force acting on the whole body is thus:
+
+				$$
+				\vec{F}=\sum \vec{F}_i=\sum m_i\vec{a}_i
+				$$
+
+				We know that 
+
+				$$
+				\begin{align}
+				\vec{r}_{cm}=\frac{\sum m_i\vec{r}_i}{M}
+				&\implies \vec{v}_{cm}=\frac{\sum m_i\vec{v}_i}{M} \\
+				&\implies \vec{a}_{cm}=\frac{\sum m_i\vec{a}_i}{M}
+				\end{align}
+				$$
+
+				Therefore \(\vec{F}=M \vec{a}_{cm}\).
+			</p>
+			<p>
+				Note that from the beginning of the derivation, we assumed that the particle's motion depended on the force only (\(\vec{F}_i=m_i\vec{a}_i)\), i.e. there were no constraints on the motion of the body. But in the case of the rolling wheel, <strong>there is a constraint and it is that the wheel rolls</strong>, hence the formula cannot be applied here.
+			</p>
+			<br>
+			<img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Cycloid_f.gif">
+		<h2>Explanation 2</h2>
+			<p>
+				$$
+				KE=\underbrace{\frac{1}{2}mv_{cm}^2}_{\text{from}\int \vec{F}\cdot d\vec{s}} +
+				\underbrace{\frac{1}{2}I\omega^2}_{\text{from}\int \vec{\tau}\cdot d\theta}
+				$$
+
+				The friction force reduces the first term but increases the second, hence the net work on the object is zero.
+			</p>	
+		<h2>Thoughts</h2>
+			<p>
+				I don't feel quite certain about <strong>Explanation 2</strong> because the friction force only acts at an instant at the point of contact, and in that instant the point neither displaces a distance \(ds\) nor rotates through an angle \(d\theta\), hence the work done is trivially zero.
+			</p>
+			<p>
+				If we think about the object rolling down a plane, the same argument applies. It is the gravitational force doing work on the object, causing it to accelerate down along the plane, increasing \(v_{cm}\) and since \(\omega=v_{cm}/r\), it increases \(\omega\) too. This then leads to the thought that it does not necessarily have to be a torque that contributes to the \(\frac{1}{2}I\omega^2\) term and likewise, a translational force that contributes to the \(\frac{1}{2}mv_{cm}^2\) term. Is it true?
+			</p>  
+</body>
+</html>
