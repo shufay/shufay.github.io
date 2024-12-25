@@ -9,12 +9,12 @@ abbr {
 
 p {
   color: #333;
-  line-height: 1.5;
+  line-height: $line-height;
 }
 
 small,
 .small {
-  font-size: 0.707rem;
+  font-size: $h6;
 }
 
 sup {

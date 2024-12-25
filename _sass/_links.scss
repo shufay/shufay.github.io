@@ -42,7 +42,12 @@ button,
 .anchorjs-link {
     text-shadow: none;
     background-image: none;
+    opacity: 1; 
+    position: absolute; 
+    margin-left: -1em; 
+    padding-right: 0.5em;
 }
+
 .anchorjs-link:hover,
 .anchorjs-link:focus,
 .anchorjs-link:active{
