@@ -11,7 +11,7 @@
 }
 
 .site-header .site-title {
-  font-size: $h2;
+  font-size: $h1;
 }
 
 .site-nav {
@@ -28,12 +28,13 @@
 .site-header nav a.nav-active:hover,
 .site-header nav a.nav-active:focus,
 .site-header nav a.nav-active:active {
-  color: $nav-link-color;
+  color: $nav-active-link-color;
   opacity: 1;
   border-bottom: $nav-link-border-bottom;
 }
 
 .site-header nav a.nav-active {
+  color: $nav-active-link-color;
   border-bottom: $nav-active-border-bottom;
 }
 
@@ -45,7 +46,12 @@
 .posts .post a:hover .post-meta,
 .posts .post a:hover .post-title,
 .posts .post a:hover .post-summary {
-  opacity: 0.88;
+  opacity: 0.85;
+}
+
+.post-summary {
+  font-style: italic;
+  opacity: 0.85;
 }
 
 .site-header {

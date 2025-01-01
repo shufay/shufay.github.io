@@ -25,7 +25,7 @@
     <link rel="alternate" type="application/rss+xml" title="RSS Feed for {{ site.title }}" href="{{ "/feed.xml" | relative_url }}" />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ "/css/pixyll.css" | relative_url }}?{{ site.time | date: "%Y%m%d%H%M" }}" type="text/css">
+    <link rel="stylesheet" href="{{ "assets/css/pixyll.css" | relative_url }}?{{ site.time | date: "%Y%m%d%H%M" }}" type="text/css">
 
     <!-- Fonts -->
     {% if site.extended_fonts %}
@@ -41,11 +41,11 @@
     {% endif %}
 
     <!-- MathJax -->
-    {% if site.enable_mathjax %}
+    <!--{% if site.enable_mathjax %}
     <script type="text/javascript" async
         src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
-    {% endif %}
+    {% endif %}-->
 
     <!-- Verifications -->
     {% if site.google_verification %}
@@ -81,7 +81,6 @@
     {% endif %}
 
     <!-- Icons -->
-
     {% if site.google_analytics %}
     <script type="text/javascript">
        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

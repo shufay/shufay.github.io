@@ -5,5 +5,8 @@ source 'https://rubygems.org'
 # https://github.com/github/pages-gem
 gem 'github-pages'
 gem 'jekyll'
+gem 'jekyll-toc'
+gem 'jekyll-paginator'
+gem 'jekyll-target-blank'
 gem "webrick", "~> 1.8"
 gem "kramdown-math-katex"

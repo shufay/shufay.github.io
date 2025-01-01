@@ -6,8 +6,11 @@ description: "Academic site"
 baseurl:     ""
 url:         "https://shufay.github.io"
 date_format: "%b %-d, %Y"
+
 header_pages:
- - blog/index.html
+ - pages/index.html
+ - pages/running.html
+ - pages/cv.html
 
 # Google services
 google_verification:
@@ -15,6 +18,7 @@ google_verification:
 # - using both will skew your data (leave blank to not use at all)
 google_analytics:
 google_tag_manager:
+
 # Bing services
 bing_verification:
 
@@ -27,6 +31,7 @@ ajaxify_contact_form: false
 enable_mathjax: true
 extended_fonts: true
 enable_anchorjs: true
+
 # Preview image for social media aka og:image and twitter:image
 post_preview_image: false
 
@@ -65,6 +70,7 @@ vk_id:
 
 # Post sharing icons
 show_sharing_icons: false
+
 # Change to 'true' to enable individual icons
 share_facebook: false
 share_twitter: false
@@ -80,6 +86,7 @@ text:
   pagination:
     newer: 'Newer'
     older: 'Older'
+
   share_buttons:
     text:         'Share this post!'
     facebook:     'Share on Facebook'
@@ -91,12 +98,18 @@ text:
     reddit:       'Share on Reddit'
     stumbleupon:  'Share on StumbleUpon'
     hackernews:   'Share on Hacker News'
+
   post:
     updated:        'Updated'
     minute_read:    'minute read'
     related_posts:  'Related Posts'
+
   index:
     coming_soon: 'Coming soon...'
+
+  running:
+    coming_soon: 'Coming soon...'
+
   contact:
     email:    'Email Address'
     content:  'What would you like to say?'
@@ -106,21 +119,36 @@ text:
       sending:  'sending..'
       sent:     'Message sent!'
       error:    'Error!'
-  thanks: 'Thanks for contacting us. We will reply as soon as possible.'
+
   og_locale: 'en_US'
+
+target-blank:
+  enable: true
+
+toc:
+  min_level: 2    # Include headers starting from h2
+  max_level: 3    # Include headers up to h3
+  no_toc_section_class: 'no-toc'
 
 # Build settings
 markdown:     kramdown
+
 redcarpet:
   extensions: ['smart', 'tables', 'with_toc_data', 'footnotes']
+
 permalink:    pretty
-paginate_path:     '/blog/:num/'
+paginate_path:     '/pages/:num/'
 paginate:     4
+
 sass:
   style: compressed
+
 plugins:
+  - jekyll-toc
   - jekyll-paginate
   - jekyll-sitemap
+  - jekyll-target-blank
+
 # https://github.com/jekyll/jekyll/issues/2938
 exclude:
   - Gemfile

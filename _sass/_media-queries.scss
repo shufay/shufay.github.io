@@ -1,6 +1,6 @@
 @media screen and (min-width: $viewport-small) {
-  html {
-    font-size: 16px;
+  html, .post-summary {
+    font-size: $h5;
   }
 
   h1,
@@ -17,11 +17,11 @@
   }
 
   .site-header a {
-    font-size: $h4;
+    font-size: $h3;
   }
 
   .site-header .site-title {
-    font-size: $h3;
+    font-size: $h2;
     float: left;
   }
 
@@ -42,23 +42,35 @@
   .social-icons-right {
     text-align: right;
   }
+
+  .measure {
+    max-width: 90%;
+  }
 }
 
 @media screen and (min-width: $viewport-medium) {
-  html {
-    font-size: 18px;
+  html, .post-summary {
+    font-size: $h5;
+  }
+
+  .measure {
+    max-width: $measure-width-medium;
   }
 }
 
 @media screen and (min-width: $viewport-large) {
-  html {
-    font-size: 20px;
+  html, .post-summary {
+    font-size: $h4;
+  }
+
+  .measure {
+    max-width: $measure-width-large;
   }
 }
 
 @media screen and (min-width: $viewport-large + 14) {
   em img {
-    max-width: $measure-width + 14;
+    max-width: $measure-width-large + 14;
     margin-left: -7em;
   }
 }
