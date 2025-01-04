@@ -3,10 +3,21 @@
 
 {% for path in page_paths %}
     {% assign item = site.pages | where: "path", path | first %}
-    {% if item.title and page.title == item.title %}
-        <a class="nav-active" href="{{ item.url | relative_url }}">{{ item.title }}</a>
-    {% elsif item.title %}
-        <a class="nav-link" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+
+    {% if item %}
+        <!-- If the item is found in site.pages -->
+        {% if item.title and page.title == item.title %}
+            <a class="nav-active" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+        {% elsif item.title %}
+            <a class="nav-link" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+        {% endif %}
+    
+    {% else %}
+        <!-- Handle non-page items like PDFs -->
+        {% if path contains ".pdf" %}
+            <a class="nav-link" href="{{ path | relative_url }}" target="_blank">cv</a>
+        {% endif %}
+
     {% endif %}
     
 {% endfor %}

@@ -1,6 +1,6 @@
 @media screen and (min-width: $viewport-small) {
   html, .post-summary {
-    font-size: $h5;
+    font-size: $base-font-size;
   }
 
   h1,
@@ -50,7 +50,7 @@
 
 @media screen and (min-width: $viewport-medium) {
   html, .post-summary {
-    font-size: $h5;
+    font-size: $h4;
   }
 
   .measure {
@@ -60,7 +60,7 @@
 
 @media screen and (min-width: $viewport-large) {
   html, .post-summary {
-    font-size: $h4;
+    font-size: $h3;
   }
 
   .measure {

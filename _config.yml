@@ -10,7 +10,11 @@ date_format: "%b %-d, %Y"
 header_pages:
  - pages/index.html
  - pages/running.html
- - pages/cv.html
+ - pages/CV_ShuFayUng_dec2024.pdf
+
+# Add PDF manually.
+include:
+  - pages/CV_ShuFayUng_dec2024.pdf
 
 # Google services
 google_verification:
