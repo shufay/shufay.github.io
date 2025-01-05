@@ -17,7 +17,8 @@ include:
   - pages/CV_ShuFayUng_dec2024.pdf
 
 # Google services
-google_verification:
+google_verification: 'rv-TrkS6oVGBzlA-vxyfyd8GBGLT5OYTy5bD9i_p5HI'
+
 # Use either direct GA implementation or set up GTM account
 # - using both will skew your data (leave blank to not use at all)
 google_analytics:
@@ -159,7 +160,6 @@ exclude:
   - Gemfile.lock
   - Rakefile
   - README.md
-  - screenshot.png
   - vendor
 
 # kramdown
