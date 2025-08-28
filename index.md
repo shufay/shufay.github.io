@@ -12,7 +12,7 @@ My research interests lie at the intersection of condensed matter physics and
 theoretical chemistry, where I seek to understand emergent phenomena in 
 condensed matter by developing and applying electronic structure methods mature 
 in the field of quantum chemistry. Currently, my research focuses on the 
-strongly-correlated{% 
+strongly correlated{% 
     sidenote "sn-id-1" '"Correlation" refers to effects that arise 
     from interactions between particles ignored by single-particle (*e.g.* "mean-field") 
     approximations; the strongly-correlated regime is where these interactions dominate.' 

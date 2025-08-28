@@ -10,11 +10,11 @@ date_format: "%b %-d, %Y"
 header_pages:
  - pages/index.html
  - pages/running.html
- - pages/CV_ShuFayUng_jul2025.pdf
+ - pages/CV_ShuFayUng_aug2025.pdf
 
 # Add PDF manually.
 include:
-  - pages/CV_ShuFayUng_jul2025.pdf
+  - pages/CV_ShuFayUng_aug2025.pdf
 
 # Google services
 google_verification: 'rv-TrkS6oVGBzlA-vxyfyd8GBGLT5OYTy5bD9i_p5HI'
