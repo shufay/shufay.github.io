@@ -1,4 +1,5 @@
 // Typography
+//$base-font-size: 12px !default; // default is 12px
 $base-font-size: 16px !default; // default is 16px
 $bold-font-weight: bold !default;
 $font-family: 'EB Garamond', 'Crimson Text', 'PT Serif', Georgia, 'Times New Roman', serif !default;
@@ -25,13 +26,13 @@ $abbr-border-bottom: 1px black dotted;
 
 // Page width
 $measure-width-small: 35rem !default;
-$measure-width-medium: 50rem !default;
+$measure-width-medium: 44rem !default;
 $measure-width-large: 65rem !default;
 
 // Viewport widths
-$viewport-small: 32em;
-$viewport-medium: 48em;
-$viewport-large: 64em;
+$viewport-small: 32em; // 512px
+$viewport-medium: 48em; // 768px
+$viewport-large: 64em; // 1024px
 
 // Colors
 $blue: #0076df !default;

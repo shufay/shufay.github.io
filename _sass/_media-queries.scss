@@ -45,13 +45,14 @@
 
   .measure {
     max-width: 90%;
+    //max-width: $measure-width-small;
   }
 }
 
 @media screen and (min-width: $viewport-medium) {
-  html, .post-summary {
-    font-size: $h4;
-  }
+  //html, .post-summary {
+  //  font-size: $h6;
+  //}
 
   .measure {
     max-width: $measure-width-medium;
@@ -59,9 +60,9 @@
 }
 
 @media screen and (min-width: $viewport-large) {
-  html, .post-summary {
-    font-size: $h3;
-  }
+  //html, .post-summary {
+  //  font-size: $h5;
+  //}
 
   .measure {
     max-width: $measure-width-large;
