@@ -12,3 +12,167 @@
   height: 100%;
   border: 1px solid #ddd;
 }
+
+/* All-time run stats widget (_includes/run_stats.html).
+   Note: basscss's layout utilities are not compiled into this site, so the row
+   is real flexbox rather than utility classes. The explicit `width: 100%` rules
+   out-specify the bare-element widths in _sidenote.scss, which reserve a
+   sidenote margin this page does not use. */
+
+.rs-widget {
+  margin: 1.5rem 0 2.5rem;
+}
+
+.rs-tiles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rs-tile {
+  flex: 1 1 8rem;
+  padding: 1rem 1.25rem;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+/* Proportional figures on purpose: tabular-nums gives every digit the width of
+   a zero, which makes a large standalone number look loose. */
+.rs-value {
+  display: block;
+  color: $dark-gray;
+  font-family: $heading-font-family;
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.rs-label {
+  display: block;
+  margin-top: .25rem;
+  color: $mid-gray;
+  font-family: $heading-font-family;
+  font-size: $h6;
+  letter-spacing: .02em;
+}
+
+.rs-meta {
+  width: 100%;
+  margin-top: .75rem;
+  color: $mid-gray;
+  font-size: $h6;
+}
+
+/* Race-times chart (the race_chart tag, _plugins/race_chart.rb).
+   The plugin emits geometry only; every color, font and size is here. */
+
+.rc-figure {
+  width: 100%;
+  max-width: 100%;
+  margin: 2rem 0;
+}
+
+/* Below .rc-svg's min-width the chart scrolls rather than shrinking its labels
+   into illegibility -- the same trade _tables.scss already makes. */
+.rc-scroll {
+  overflow-x: auto;
+}
+
+.rc-svg {
+  display: block;
+  width: 100%;
+  min-width: 30rem;
+  height: auto;
+  font-family: $heading-font-family;
+}
+
+.rc-grid line {
+  stroke: $lighter-gray;
+  stroke-width: 1;
+}
+
+.rc-axis {
+  stroke: $light-gray;
+  stroke-width: 1;
+}
+
+.rc-line {
+  fill: none;
+  stroke: $contrast-color;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* The ring is the surface color, so overlapping points stay separable without
+   a border drawn around the mark. */
+.rc-dot {
+  fill: $contrast-color;
+  stroke: #fff;
+  stroke-width: 2;
+}
+
+.rc-dot-pr {
+  fill: #fff;
+  stroke: $contrast-color;
+  stroke-width: 2.5;
+}
+
+.rc-panel-title {
+  fill: $dark-gray;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* Axis ticks and table columns are the places digits must align vertically,
+   so they are the only places tabular figures belong. */
+.rc-ticks text {
+  fill: $mid-gray;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+
+.rc-value {
+  fill: $dark-gray;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.rc-figure figcaption {
+  margin-top: .5rem;
+  color: $mid-gray;
+  font-size: $h6;
+}
+
+.rc-table {
+  width: 100%;
+  font-size: $h5;
+  font-variant-numeric: tabular-nums;
+}
+
+@media screen and (max-width: 760px) {
+  .rs-tile {
+    flex-basis: 100%;
+  }
+
+  .rc-figure {
+    max-width: 100%;
+  }
+
+  /* Thin the unlabelled year gridlines and drop the point labels; the table
+     underneath carries every value. */
+  .rc-x-alt,
+  .rc-value {
+    display: none;
+  }
+
+  .rc-table {
+    width: 100%;
+    font-size: $h6;
+  }
+}

@@ -161,6 +161,11 @@ exclude:
   - Rakefile
   - README.md
   - vendor
+  - CLAUDE.md
+  - scripts
+  - "*.ipynb"
+  - .ipynb_checkpoints
+  - .env
 
 # kramdown
 kramdown:

@@ -1,0 +1,11 @@
+# PLACEHOLDER DATA -- these are not real totals.
+#
+# Run `scripts/update_strava_stats.py` with the STRAVA_* environment variables
+# set (or trigger the "Refresh Strava Stats" workflow) to overwrite this file
+# with the real numbers. The script regenerates the whole file, so anything
+# edited here by hand is lost on the next run.
+updated: 2026-09-18
+runs: 0
+distance_mi: 0.0
+moving_time_hr: 0.0
+elevation_gain_ft: 0

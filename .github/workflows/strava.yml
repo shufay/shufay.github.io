@@ -1,0 +1,74 @@
+name: Refresh Strava Stats
+
+# Kept separate from jekyll.yml so the deploy workflow keeps `contents: read`.
+# Committing _data/strava_stats.yml to master triggers jekyll.yml, which
+# rebuilds and deploys.
+
+on:
+  schedule:
+    # Mondays at 12:10 UTC. Offset from the hour because GitHub's scheduler
+    # queues heavily on the hour.
+    - cron: "10 12 * * 1"
+  workflow_dispatch:
+
+# Only one refresh at a time: two concurrent runs would each rotate the refresh
+# token and invalidate the other's.
+concurrency:
+  group: strava-refresh
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Fetch Strava totals
+        id: strava
+        env:
+          STRAVA_CLIENT_ID: ${{ secrets.STRAVA_CLIENT_ID }}
+          STRAVA_CLIENT_SECRET: ${{ secrets.STRAVA_CLIENT_SECRET }}
+          STRAVA_REFRESH_TOKEN: ${{ secrets.STRAVA_REFRESH_TOKEN }}
+        run: python scripts/update_strava_stats.py
+
+      # Strava invalidates the old refresh token on every refresh, so the
+      # rotated value must be stored back or the next run fails. This needs a
+      # PAT with secrets write scope -- the default GITHUB_TOKEN cannot write
+      # repository secrets.
+      - name: Persist rotated refresh token
+        if: steps.strava.outputs.new_refresh_token != ''
+        env:
+          GH_TOKEN: ${{ secrets.SECRETS_WRITE_PAT }}
+        run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo "::error::Strava rotated the refresh token but SECRETS_WRITE_PAT is not set. The next run will fail with an invalid refresh token."
+            exit 1
+          fi
+          gh secret set STRAVA_REFRESH_TOKEN \
+            --body "${{ steps.strava.outputs.new_refresh_token }}" \
+            --repo "${{ github.repository }}"
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- _data/strava_stats.yml; then
+            echo "No change in run totals; nothing to commit."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _data/strava_stats.yml
+          git commit -m "Refresh Strava run totals"
+          git push

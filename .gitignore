@@ -8,3 +8,15 @@ _site
 _config.gh-pages.yml
 
 Gemfile.lock
+
+# Local Strava credentials. Never commit.
+.env
+
+# Exploratory notebooks: they store cell output, which has included live
+# API credentials in the past.
+*.ipynb
+.ipynb_checkpoints/
+
+# Superseded by scripts/update_strava_stats.py. Still holds hardcoded
+# credentials and disables TLS verification, so keep it out of the repo.
+scripts/update_total_stats_0.py
