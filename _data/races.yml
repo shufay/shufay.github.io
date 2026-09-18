@@ -1,0 +1,163 @@
+# Race results -- hand-maintained. Rendered by the {% race_chart %} tag
+# (_plugins/race_chart.rb) on pages/running.html.
+#
+# Fields
+#   event     marathon | half | other. Only marathon and half are plotted;
+#             `other` rows appear in the results table only.
+#   name      race name, shown in the table.
+#   date      unquoted ISO date (2024-11-03). Keep it unquoted: quoting makes
+#             YAML hand back a string instead of a date, and while the chart
+#             math is timezone-proof either way, the table's date formatting
+#             relies on getting a real date.
+#   time      official finish time, "H:MM:SS" or "MM:SS". Leave empty for a
+#             DNF/DNS -- the row then shows in the table but not the chart.
+#   pr        optional; true directly labels that point on the chart.
+#   location  optional; table only.
+#   notes     optional; table only.
+#   status    optional; shown in place of the time for a DNF/DNS.
+#   distance_mi  required only for `event: other`, to compute its pace.
+#
+# Order does not matter -- the chart sorts by date and the table sorts newest
+# first.
+
+# Marathons
+- event:    marathon
+  name:     Boston Marathon
+  date:     2026-04-20
+  time:     "3:07:16"
+  location: Boston, MA
+  pr:       true
+  notes:    Ferritin levels were 57 ng/mL about 4 weeks before.
+
+- event:    marathon
+  name:     Chicago Marathon
+  date:     2025-10-12
+  time:     "3:14:25"
+  location: Chicago, IL
+  notes:    Ferritin levels were 8 ng/mL about 2 weeks before.
+
+- event:    marathon
+  name:     New York City Marathon
+  date:     2024-11-03
+  time:     "3:08:14"
+  location: New York, NY
+
+- event:    marathon
+  name:     California International Marathon
+  date:     2023-12-03
+  time:     "3:12:22"
+  location: Sacramento, CA
+
+# Half marathons.
+- event:    half
+  name:     NYRR RBC Brooklyn Half
+  date:     2026-05-16
+  time:     "1:33:14"
+  location: Brooklyn, NY
+
+- event:    half
+  name:     NYRR Maybelline Women's Half
+  date:     2026-04-26
+  time:     "1:30:07"
+  location: New York, NY
+  notes:    Raced this within one week after Boston!
+
+- event:    half
+  name:     NYRR United Airlines NYC Half
+  date:     2024-03-17
+  time:     "1:42:14"
+  location: New York, NY
+  notes:    Paced Valerie to a PR.
+
+- event:    half
+  name:     NYRR Staten Island Half
+  date:     2023-10-08
+  time:     "1:29:25"
+  location: Staten Island, NY
+  pr:       true
+  notes:    Time-qualified for NYCM for the first time.
+
+- event:    half
+  name:     NYRR RBC Brooklyn Half
+  date:     2023-05-20
+  time:     "1:32:24"
+  location: Brooklyn, NY
+  notes:    Really disappointed that I fell 24s short of the NYCM time qualifier.
+
+- event:    half
+  name:     NYRR United Airlines NYC Half
+  date:     2023-03-19
+  time:     "1:37:10"
+  location: New York, NY
+  notes:    First official half marathon.
+
+# Other.
+- event:    other
+  name:     Manhattan Perimeter Run
+  date:     2026-05-30
+  time:     "4:51:02"
+  distance_mi: 33.83
+  location: New York, NY
+  notes:    Second Manhattan perimeter with Central Park Run Club.
+
+- event:    other
+  name:     OSR Prototype Race
+  date:     2025-11-01
+  time:     "1:36:26"
+  distance_mi: 13.38
+  location: New York, NY
+  notes:    Chaotic and exhilarating checkpoint race through Manhattan on the 
+            eve of the NYCM. 5th female.
+
+- event:    other
+  name:     Take the Bridge 10mi race (TTB 10)
+  date:     2025-07-25
+  time:     "1:17:28"
+  distance_mi: 10.19
+  location: New York, NY
+  notes:    Gruelling checkpoint race through Queens, Randalls Island, and Manhattan.
+
+- event:    other
+  name:     Manhattan Perimeter Run
+  date:     2025-05-24
+  time:     "4:55:57"
+  distance_mi: 33.80
+  location: New York, NY
+  notes:    First Manhattan perimeter with Central Park Run Club!
+
+- event:    other
+  name:     Charlie Card Challenge
+  date:     2024-09-13
+  time:     "42:56"
+  distance_mi: 5.99
+  location: Boston, MA
+  notes:    Race against the MBTA Green line from Boston College to Park Street.
+            Beat our train, which took 46:10!
+
+- event:    other
+  name:     The Speed Project LALV
+  date:     2024-03-29
+  time:     "6:24:31"
+  distance_mi: 46.6
+  location: Los Angeles, CA -- Las Vegas, NV
+  notes:    March 29-31. ~340mi relay across the Mojave Desert. Total distance
+            ran was split into segments of ~1-5mi across 3 days, rotated among
+            11 runners with at least 1 person running at all times.
+            
+- event:    other
+  name:     Warriors UltraRun
+  date:     2023-07-23
+  time:     "4:26:27"
+  distance_mi: 28.03
+  location: New York, NY
+  notes:    Ran from Van Cortland Park to Coney Island starting at 1:15am with 
+            the Running Hearts. First ultra! (before officially running a marathon lol.)
+
+- event:    other
+  name:     OSR Bread Route Race
+  date:     2023-06-03
+  time:     "52:26"
+  distance_mi: 7.74
+  location: New York, NY
+  notes:    First OSR race--running from Grant's Tomb to Pike Slip through Times 
+            Square at 2am. 7th female.

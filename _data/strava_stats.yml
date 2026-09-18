@@ -1,9 +1,21 @@
-# PLACEHOLDER DATA -- these are not real totals.
+# All-time run totals -- hand-maintained. Rendered by _includes/run_stats.html.
 #
-# Run `scripts/update_strava_stats.py` with the STRAVA_* environment variables
-# set (or trigger the "Refresh Strava Stats" workflow) to overwrite this file
-# with the real numbers. The script regenerates the whole file, so anything
-# edited here by hand is lost on the next run.
+# These were fetched automatically until Strava put Standard-tier API access
+# behind a paid subscription (existing developers were cut off on 2026-06-30).
+# The app now returns 403 Application/Status/Inactive for every request, so the
+# fetch script and its weekly workflow were removed. Update these by hand.
+#
+# Where to read the numbers: your Strava profile page shows all-time run totals
+# directly, or Settings -> My Account -> Download or Delete Your Account gives a
+# bulk export if you would rather total them yourself.
+#
+# Bump `updated` when you change the numbers -- the widget prints it as the
+# as-of date. Keep it unquoted so Jekyll hands back a real date object, the same
+# convention as _data/races.yml.
+#
+# The widget no-ops entirely if this file is missing, and omits the run count if
+# `runs` is 0, so partial data degrades quietly rather than rendering blanks.
+
 updated: 2026-09-18
 runs: 0
 distance_mi: 0.0

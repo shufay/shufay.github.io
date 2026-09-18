@@ -1,14 +1,25 @@
 name: Refresh Strava Stats
 
+# DORMANT as of 2026-09. Strava moved Standard-tier API access behind a paid
+# subscription -- existing developers were cut off on 2026-06-30 -- and the app
+# now returns 403 Application/Status/Inactive for every request. The weekly
+# schedule is commented out so this stops failing (and mailing a failure notice)
+# every Monday; _data/strava_stats.yml is hand-maintained in the meantime.
+#
+# To revive it: subscribe, confirm the app is active at strava.com/settings/api,
+# re-authorize with `scope=read,activity:read_all` (the old token was read-only,
+# which undercounts private activities), refresh the STRAVA_* repository
+# secrets, then uncomment the schedule below.
+#
 # Kept separate from jekyll.yml so the deploy workflow keeps `contents: read`.
 # Committing _data/strava_stats.yml to master triggers jekyll.yml, which
 # rebuilds and deploys.
 
 on:
-  schedule:
-    # Mondays at 12:10 UTC. Offset from the hour because GitHub's scheduler
-    # queues heavily on the hour.
-    - cron: "10 12 * * 1"
+  # Mondays at 12:10 UTC. Offset from the hour because GitHub's scheduler
+  # queues heavily on the hour. Disabled -- see the note above.
+  # schedule:
+  #   - cron: "10 12 * * 1"
   workflow_dispatch:
 
 # Only one refresh at a time: two concurrent runs would each rotate the refresh

@@ -79,9 +79,13 @@ def persist_rotated_token(new_refresh_token):
     """Hand the rotated refresh token back to the workflow, if we're in one."""
     github_output = os.environ.get("GITHUB_OUTPUT")
     if not github_output:
+        # Outside Actions there is nowhere to write the value, so print it:
+        # the old token is already dead, and losing this one means redoing the
+        # OAuth flow by hand. stderr, so piping stdout cannot swallow it.
         print(
-            "note: refresh token was rotated. Update STRAVA_REFRESH_TOKEN in your "
-            "local .env before the next run.",
+            "note: Strava rotated the refresh token. Set STRAVA_REFRESH_TOKEN to "
+            "the value below in your local .env, or the next run will fail:\n"
+            f"\n    STRAVA_REFRESH_TOKEN={new_refresh_token}\n",
             file=sys.stderr,
         )
         return
