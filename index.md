@@ -62,6 +62,7 @@ For an updated list, please see my [Google Scholar](https://scholar.google.com/c
 *Measurement reduction in variational quantum algorithms.*
 [Phys. Rev. A 101, 062322 (2020)](https://doi.org/10.1103/PhysRevA.101.062322), 
 [arXiv:1908.08067](https://arxiv.org/abs/1908.08067)
+{: reversed="reversed"}
 
 
 # [<a name="contact"></a>contact](#contact)
