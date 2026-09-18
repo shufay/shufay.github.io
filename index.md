@@ -31,16 +31,26 @@ I'm also an avid runner and can often be found on my *n*-th loop of Central Park
 %}.
 
 # [<a name="publications"></a>publications](#publications)
-For an updated list, please see my [Google Scholar](https://scholar.google.com/citations?user=iMpn_4sAAAAJ&hl=en).
+For an updated list, please see my [Google Scholar](https://scholar.google.com/citations?user=iMpn_4sAAAAJ&hl=en). (* indicates equal contributions.)
+
+6. **S.F.Ung\***, A. Mahajan\*, D.R. Reichman. 
+*Study of the triangular-lattice Hubbard model with constrained-path quantum Monte Carlo.* 
+[Phys. Rev. B 114, 065112 (2026)](https://doi.org/10.1103/j85h-z664), 
+[arXiv:2603.14808](https://doi.org/10.48550/arXiv.2603.14808)
+
+5. L. Peng, S. Liu, X. Zhang, X. Chen, C. Li, **S.F. Ung**, H.P. Cheng, G.K.L. Chan.
+*Accurate crystal field Hamiltonians of single-ion magnets at mean-field cost.*
+[J. Phys. Chem. Lett. (2025) 16 (47)](https://doi.org/10.1021/acs.jpclett.5c02971A), 
+[arXiv:2505.16905](https://doi.org/10.48550/arXiv.2505.16905)
 
 4. T. Jiang, M.K.A. Baumgarten, P.F. Loos, A. Mahajan, A. Scemama, **S.F. Ung**, J. Zhang, F.D. Malone, J. Lee. 
 *Improved modularity and new features in ipie: Toward even larger AFQMC calculations on CPUs and GPUs at zero and finite temperatures.*
-[J. Chem. Phys. 161, 162502 (2024)](https://doi.org/10.1063/5.0225596),
- [arXiv:2406.16238](https://doi.org/10.48550/arXiv.2406.16238)
+[J. Chem. Phys. 161, 162502 (2024)](https://doi.org/10.1063/5.0225596), 
+[arXiv:2406.16238](https://doi.org/10.48550/arXiv.2406.16238)
 
 3. **S.F. Ung**, J. Lee, D.R. Reichman. 
 *Competing Generalized Wigner Crystal States in Moiré Heterostructures.*
-[Phys. Rev. B 108, 245113 (2023)](https://doi.org/10.1103/PhysRevB.108.245113),
+[Phys. Rev. B 108, 245113 (2023)](https://doi.org/10.1103/PhysRevB.108.245113), 
 [arXiv:2308.03020](https://doi.org/10.48550/arXiv.2308.03020)
 
 2. R. Babbush, W.J. Huggins, D.W. Berry, **S.F. Ung**, A. Zhao, D.R. Reichman, H. Neven, A.D. Baczewski, and J. Lee. 

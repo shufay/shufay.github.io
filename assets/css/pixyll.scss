@@ -35,5 +35,11 @@
 @import 'measure';
 @import 'pagination';
 
+@import "custom";
+
 /* Tufte-CSS additions */
 @import 'sidenote';
+
+.site-wrap {
+  counter-reset: sidenote-counter;
+}

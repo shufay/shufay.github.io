@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The three-body problem, revisited statistically
+title: the three-body problem, revisited statistically
 date: 2021-06-10
 summary: Astrophysicists proposed a solution to the three-body problem inspired by statistical mechanics.
 categories: blog
